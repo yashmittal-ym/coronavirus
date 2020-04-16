@@ -4,7 +4,7 @@
     <title>Global Stats</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Global Statistics</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -14,11 +14,53 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <style>
+        #container { display:block; }
+      
+      @media only screen and (orientation:portrait){
+      
+        #container {
+      
+          height: 100vw;
+      
+          -webkit-transform: rotate(90deg);
+      
+          -moz-transform: rotate(90deg);
+      
+          -o-transform: rotate(90deg);
+      
+          -ms-transform: rotate(90deg);
+      
+          transform: rotate(90deg);
+      
+        }
+      
+      }
+      
+      @media only screen and (orientation:landscape){
+      
+        #container {
+      
+           -webkit-transform: rotate(0deg);
+      
+           -moz-transform: rotate(0deg);
+      
+           -o-transform: rotate(0deg);
+      
+           -ms-transform: rotate(0deg);
+      
+           transform: rotate(0deg);
+      
+        }
+      
+      }
+          </style>
 </head>
-<body >
+<body style="background-color: whitesmoke;" id="container">
 
     <h1 style="text-align: center;font-family: Roboto;">Cases Timeline - Global</h1>
-    <div><canvas id="myChart" width="400" height="150" style="background-color: whitesmoke;"></canvas></div>
+    <div><canvas id="myChart" width="400" height="150" ></canvas></div>
 
 <div class="table-responsive" style="font-family: Roboto;font-size: large;font-weight: 700;" >
     <table class="table" id=CountryWise>

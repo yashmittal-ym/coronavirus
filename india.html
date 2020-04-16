@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India Statistics</title>
-
+    <link rel="icon" href="images/corona1.webp" type="image/webp" sizes="16x16">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
@@ -14,15 +14,65 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"</script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <style>
+  #container { display:block; }
+
+@media only screen and (orientation:portrait){
+
+  #container {
+
+    height: 100vw;
+
+    -webkit-transform: rotate(90deg);
+
+    -moz-transform: rotate(90deg);
+
+    -o-transform: rotate(90deg);
+
+    -ms-transform: rotate(90deg);
+
+    transform: rotate(90deg);
+
+  }
+
+}
+
+@media only screen and (orientation:landscape){
+
+  #container {
+
+     -webkit-transform: rotate(0deg);
+
+     -moz-transform: rotate(0deg);
+
+     -o-transform: rotate(0deg);
+
+     -ms-transform: rotate(0deg);
+
+     transform: rotate(0deg);
+
+  }
+
+}
+    </style>
 </head>
 
-<body >
-<h1 style="text-align: center;font-family: Roboto;">Cases Timeline - India</h1>
+<body style="background-color:whitesmoke" id="container">
 
-<canvas id="myChart" width="400" height="150" style="background-color: whitesmoke;"></canvas>
-<canvas id="myChart1" width="400" height="150" style="background-color: whitesmoke;"></canvas>
-<canvas id="myChart2" width="400" height="150" style="background-color: whitesmoke;"></canvas>
-     
+
+<h1 style="text-align: center;font-family: Roboto;">Cases Timeline - India</h1>
+<h4 style="text-align: center;font-family: Roboto;">(Click/Tap the points/bars below for exact number)</h4>
+
+<div style="width: 80%;height: 100%;margin-left: 10%;" ><canvas id="myChart" width="400" height="200" ></canvas></div>
+<br>
+<div class="container-fluid">
+    <div class="col-lg-6 col-md-3 col-12">
+<canvas id="myChart1" width="400" height="200" ></canvas>
+</div>
+<div class="col-lg-6 col-md-3 col-12">
+<canvas id="myChart2" width="400" height="200" "></canvas>
+</div>
+</div>
 
 <div class="table-responsive" style="font-family: Roboto;font-size: large;font-weight: 700;" >
     <table class="table" id="stateWise">
@@ -134,10 +184,10 @@
         data: {
             labels: xlabels,
             datasets: [{
-                label: 'Daily confirmed cases in india',
+                label: 'Daily confirmed cases in india(Double Click/Tap to Update)',
                 data: y3labels,
                 fill: false,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'rgb(201, 56, 201)',
                 borderWidth: 1
             }]           
         },
@@ -157,10 +207,10 @@
         data: {
             labels: x2labels,
             datasets: [{
-                label: 'States with most no. of cases',
+                label: 'States with most no. of cases(Double Click/Tap to Update)',
                 data: y4labels,
                 fill: false,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                backgroundColor: 'red',
                 borderWidth: 1
             }]        
         },
