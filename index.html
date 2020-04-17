@@ -84,7 +84,7 @@
     const response= await fetch("https://api.covid19api.com/summary");
     const data4=await response.json();
 
-    var newconfirmedworldwide=data4.Global.NewConfirmed;  
+    var newconfirmedworldwide=data4.Global.NewConfirmed;console.log(newconfirmedworldwide);  
     var a = $('#counter1').data('number'); //getter
     var x=""+newconfirmedworldwide;
     $('#counter1').data('number',x); //setter
